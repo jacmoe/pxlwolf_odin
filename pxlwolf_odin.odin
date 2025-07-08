@@ -5,35 +5,41 @@ import "core:fmt"
 import "core:log"
 import "core:os"
 import "core:path/filepath"
-import t "core:time"
-import dt "core:time/datetime"
+import "core:time"
+import "core:time/datetime"
 import "core:math"
 
 
 main :: proc()
 {
     context.logger = log.create_multi_logger(log.create_console_logger())
+    log.infof("Application started")
+
+    context.logger = create_logger()
     defer log.destroy_multi_logger(context.logger)
 
-    setup_logging()
-
-    log.infof("Application started")
     log.infof("Doing stuff")
+
     log.infof("Application stopped")
 }
 
-setup_logging :: proc()
+create_logger :: proc() -> log.Logger
 {
+    logger: log.Logger
     log_file_name := createLogPath()
     flags: int = os.O_CREATE | os.O_TRUNC | os.O_WRONLY
     mode: int = os.S_IRUSR | os.S_IWUSR | os.S_IRGRP | os.S_IROTH
     if log_handle, err := os.open(log_file_name, flags, mode); err == 0
     {
-        context.logger = log.create_multi_logger(log.create_console_logger(), log.create_file_logger(log_handle),)
+        logger = log.create_multi_logger(log.create_console_logger(), log.create_file_logger(log_handle),)
+        context.logger = logger
         log.log(.Info, "Creating multi_logger")
     } else {
+        logger = log.create_multi_logger(log.create_console_logger())
+        context.logger = logger
         log.logf(.Warning, "Log file could not be created! Filename: {}", log_file_name)
     }
+    return logger
 }
 
 
@@ -41,28 +47,19 @@ setup_logging :: proc()
 createLogPath :: proc() -> string {
     if !os.exists("./logs") do os.make_directory("./logs")
 
-        // Maybe I can check how many files are in the directory and then create a new file with the next number.
-        now := t.now()
-        year, month, day := t.date(now)
-        dateTime: dt.DateTime = {
-            date = dt.Date{year = (i64)(year), month = (i8)(month), day = (i8)(day)},
-        }
-        midnight, _ := t.datetime_to_time(dateTime)
-        seconds := math.floor(t.duration_seconds(t.diff(midnight, now)))
+    right_now := time.now()
 
-        hours := math.floor(seconds / t.SECONDS_PER_HOUR)
-        seconds -= hours * t.SECONDS_PER_HOUR
-        minutes := math.floor(seconds / t.SECONDS_PER_MINUTE)
-        seconds -= minutes * t.SECONDS_PER_MINUTE
+    year, month, day := time.date(right_now)
 
-        str: string = fmt.tprintf(
-            "./logs/{:4i}{:2i}{:2i}{:2.0f}{:2.0f}{:2.0f}.log",
-            dateTime.year,
-            dateTime.month,
-            dateTime.day,
-            hours,
-            minutes,
-            seconds,
-        )
-        return str
+    the_date: datetime.DateTime = { date = datetime.Date{year = (i64)(year), month = (i8)(month), day = (i8)(day)},}
+
+    midnight, _ := time.datetime_to_time(the_date)
+    seconds := math.floor(time.duration_seconds(time.diff(midnight, right_now)))
+    hours := math.floor(seconds / time.SECONDS_PER_HOUR)
+    seconds -= hours * time.SECONDS_PER_HOUR
+    minutes := math.floor(seconds / time.SECONDS_PER_MINUTE)
+    seconds -= minutes * time.SECONDS_PER_MINUTE
+
+    return fmt.tprintf("./logs/{:4i}{:2i}{:2i}{:2.0f}{:2.0f}{:2.0f}.log", the_date.year, the_date.month, the_date.day,
+                       hours, minutes, seconds, )
 }
