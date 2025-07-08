@@ -7,8 +7,8 @@ import "core:os"
 import "core:path/filepath"
 import "core:time"
 import "core:time/datetime"
+import "core:time/timezone"
 import "core:math"
-
 
 main :: proc()
 {
@@ -42,24 +42,20 @@ create_logger :: proc() -> log.Logger
     return logger
 }
 
-
-// Lifted from https://github.com/xandaron/Valhalla/
 createLogPath :: proc() -> string {
     if !os.exists("./logs") do os.make_directory("./logs")
 
-    right_now := time.now()
+    the_time := time.now()
+    the_date, _ := time.time_to_datetime(the_time)
 
-    year, month, day := time.date(right_now)
+    tz, tz_err := timezone.region_load("Europe/Copenhagen")
+    corrected_date, _ := timezone.datetime_to_tz(the_date, tz)
+    corrected_time, _ := time.datetime_to_time(corrected_date)
 
-    the_date: datetime.DateTime = { date = datetime.Date{year = (i64)(year), month = (i8)(month), day = (i8)(day)},}
+    date_buf: [time.MIN_YYYY_DATE_LEN]u8
+    date_string := time.to_string_dd_mm_yyyy(corrected_time, date_buf[:])
+    time_buf: [time.MIN_HMS_LEN]u8
+    time_string := time.time_to_string_hms(corrected_time, time_buf[:])
 
-    midnight, _ := time.datetime_to_time(the_date)
-    seconds := math.floor(time.duration_seconds(time.diff(midnight, right_now)))
-    hours := math.floor(seconds / time.SECONDS_PER_HOUR)
-    seconds -= hours * time.SECONDS_PER_HOUR
-    minutes := math.floor(seconds / time.SECONDS_PER_MINUTE)
-    seconds -= minutes * time.SECONDS_PER_MINUTE
-
-    return fmt.tprintf("./logs/{:4i}{:2i}{:2i}{:2.0f}{:2.0f}{:2.0f}.log", the_date.year, the_date.month, the_date.day,
-                       hours, minutes, seconds, )
+    return fmt.tprintf("./logs/{}_{}.log", date_string, time_string, )
 }
