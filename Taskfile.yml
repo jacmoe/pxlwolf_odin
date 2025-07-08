@@ -1,0 +1,35 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  STDARGS: -vet -strict-style
+
+interval: 500ms
+
+tasks:
+  default:
+    cmds:
+      - odin run . {{.STDARGS}}
+    aliases: [run]
+    
+  build:
+    cmds:
+      - odin build . {{.STDARGS}}
+  
+  debug:
+    cmds:
+      - odin run . -debug -o:none {{.STDARGS}}
+
+  leaks:
+    deps: [debug]
+    cmds:
+      - valgrind --leak-check=yes ./pxlwolf_odin
+
+  test:
+    watch: true
+    sources:
+      - '**/*.odin'
+    cmds:
+      - odin test .
+    silent: true
