@@ -12,7 +12,7 @@ create_logger :: proc() -> log.Logger {
     flags: int = os.O_CREATE | os.O_TRUNC | os.O_WRONLY
     mode: int = os.S_IRUSR | os.S_IWUSR | os.S_IRGRP | os.S_IROTH
     if log_handle, err := os.open(log_path, flags, mode); err == nil {
-        logger = log.create_multi_logger( log.create_console_logger(), log.create_file_logger(log_handle), )
+        logger = log.create_multi_logger(log.create_console_logger(), log.create_file_logger(log_handle))
     } else {
         logger = log.create_multi_logger(log.create_console_logger())
     }
