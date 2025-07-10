@@ -59,7 +59,6 @@ debug_level :: proc(a_level: Level) {
 // Map
 
 Map :: struct {
-//    defs:               MapDefs            `json:"defs"`,
     levels:             []MapLevel          `json:"levels"`,
 }
 
