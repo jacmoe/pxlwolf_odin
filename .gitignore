@@ -1,7 +1,6 @@
 pxlwolf_odin
 logs/*.log
 *.kate-swp
-*.json
 *.go
 .task/*
 vgcore.*
