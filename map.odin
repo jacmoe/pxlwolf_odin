@@ -6,10 +6,9 @@ import "core:log"
 import linalg "core:math/linalg"
 import "core:os"
 
-parse_map :: proc(path: string, alloc := context.allocator) -> Map {
+parse_map :: proc(path: string, alloc := context.temp_allocator) -> Map {
     m: Map
     jdata, ok := os.read_entire_file(path, alloc)
-    defer delete(jdata)
     if !ok {
         fmt.print("Failed to read file: ", path, "\n")
         return m
@@ -29,10 +28,9 @@ debug_map :: proc(a_map: Map) {
     }
 }
 
-parse_level :: proc(path: string, alloc := context.allocator) -> LevelInstance {
+parse_level :: proc(path: string, alloc := context.temp_allocator) -> LevelInstance {
     l: LevelInstance
     jdata, ok := os.read_entire_file(path, alloc)
-    defer delete(jdata)
     if !ok {
         fmt.print("Failed to read file: ", path, "\n")
         return l

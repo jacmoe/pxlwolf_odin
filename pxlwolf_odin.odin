@@ -1,12 +1,11 @@
 package pxlwolf_odin
-
 import "core:log"
 import "core:strings"
 
 main :: proc() {
 
     context.logger = create_logger()
-    defer log.destroy_multi_logger(context.logger)
+    defer log.destroy_console_logger(context.logger)
 
     log.info("Welcome to PxlWolf")
 
@@ -17,6 +16,5 @@ main :: proc() {
     defer delete(level_path)
     the_level: LevelInstance = parse_level(level_path)
     debug_level(the_level)
-
     log.info("PxlWolf shutdown")
 }

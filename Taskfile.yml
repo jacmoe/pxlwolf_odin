@@ -10,19 +10,23 @@ interval: 500ms
 tasks:
   default:
     cmds:
-      - odin run . {{.STDARGS}}
+      - odin run . -o:minimal {{.STDARGS}}
     aliases: [run]
     
   build:
     cmds:
-      - odin build . {{.STDARGS}}
+      - odin build . -o:minimal {{.STDARGS}}
   
   debug:
     cmds:
-      - odin run . -debug -o:none {{.STDARGS}}
+      - odin run . -debug -o:none -use-separate-modules {{.STDARGS}}
+
+  debug_build:
+    cmds:
+      - odin build . -debug
 
   leaks:
-    deps: [debug]
+    deps: [debug_build]
     cmds:
       - valgrind --leak-check=yes ./pxlwolf_odin
 
