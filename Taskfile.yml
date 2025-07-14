@@ -3,7 +3,7 @@
 version: '3'
 
 vars:
-  STDARGS: -vet -strict-style
+  STDARGS: -vet -strict-style -show-timings
 
 interval: 500ms
 
@@ -23,7 +23,7 @@ tasks:
 
   debug_build:
     cmds:
-      - odin build . -debug
+      - odin build . -debug -o:none -use-separate-modules
 
   leaks:
     deps: [debug_build]

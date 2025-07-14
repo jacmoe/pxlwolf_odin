@@ -6,16 +6,14 @@ import "core:os"
 import "core:time"
 import "core:time/timezone"
 
-create_logger :: proc() -> log.Logger {
-    logger: log.Logger
-    // log_path := create_log_path()
-    // flags: int = os.O_CREATE | os.O_TRUNC | os.O_WRONLY
-    // mode: int = os.S_IRUSR | os.S_IWUSR | os.S_IRGRP | os.S_IROTH
-    // if log_handle, err := os.open(log_path, flags, mode); err == nil {
-    //     logger = log.create_file_logger(log_handle)
-    // }
-    log.create_console_logger()
-    return logger
+create_file_logger :: proc(level := log.Level.Debug) -> log.Logger {
+    log_path := create_log_path()
+    flags: int = os.O_CREATE | os.O_TRUNC | os.O_WRONLY
+    mode: int = os.S_IRUSR | os.S_IWUSR | os.S_IRGRP | os.S_IROTH
+    if log_handle, err := os.open(log_path, flags, mode); err == nil {
+        return log.create_file_logger(log_handle, level)
+    }
+    return log.Logger{}
 }
 
 create_log_path :: proc() -> string {

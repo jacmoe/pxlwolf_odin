@@ -4,6 +4,5 @@ logs/*.log
 *.go
 .task/*
 vgcore.*
-vendor/rres
-vendor/sqlite3
-vendor/toml
+localvendor/rres
+localvendor/toml
