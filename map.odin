@@ -6,101 +6,131 @@ import "core:log"
 import linalg "core:math/linalg"
 import "core:os"
 
-parse_map :: proc(path: string, alloc := context.temp_allocator) -> Map {
+
+load_map :: proc(map_name: string, alloc := context.temp_allocator) -> Map {
     m: Map
-    jdata, ok := os.read_entire_file(path, alloc)
-    if !ok {
-        fmt.print("Failed to read file: ", path, "\n")
-        return m
+    m_raw: Map_raw
+    map_exists: bool = true
+
+    map_file_path := fmt.tprintf("assets/levels/{}.{}", map_name, "json")
+    if !os.exists(map_file_path) {
+        log.infof("We have not yet generated a map")
+        map_exists = false
+        map_file_path = fmt.tprintf("assets/levels/{}.{}", map_name, "ldtk")
     }
 
-    err := json.unmarshal(jdata, &m, allocator = alloc)
-    if err != nil {
-        fmt.print("Failed to unmarshal JSON: ", err, "\n")
-        return m
+    jdata, ok := os.read_entire_file(map_file_path, alloc)
+    if !ok {
+        log.fatalf("Failed to read file: ", map_name)
+        os.exit(-1)
     }
+
+    if map_exists {
+        _ = m_raw
+        err := json.unmarshal(jdata, &m, allocator = alloc)
+        if err != nil {
+            log.fatalf("Failed to unmarshal JSON: ", err)
+            os.exit(-1)
+        }
+    } else {
+        err := json.unmarshal(jdata, &m_raw, allocator = alloc)
+        if err != nil {
+            log.fatalf("Failed to unmarshal JSON: ", err)
+            os.exit(-1)
+        }
+
+        // create a Map
+        m.levels = make([]Level, len(m_raw.levels), alloc)
+        for level, i in m_raw.levels {
+            m.levels[i].name = level.identifier
+            m.levels[i].path = level.path
+        }
+
+        // marshall the Map
+        marshall_json_data, marshall_err := json.marshal(
+        m,
+        {
+            // Adds indentation etc
+            pretty         = true,
+
+            // Output enum member names instead of numeric value.
+            use_enum_names = true,
+        },
+        )
+
+        if marshall_err != nil {
+            fmt.eprintfln("Unable to marshal JSON: %v", marshall_err)
+            os.exit(1)
+        }
+
+        // write map to file
+        write_path := fmt.tprintf("assets/levels/{}.{}", map_name, "json")
+        werr := os.write_entire_file_or_err(write_path, marshall_json_data)
+
+        if werr != nil {
+            fmt.eprintfln("Unable to write file: %v", werr)
+            os.exit(1)
+        }
+
+    }
+
     return m
 }
 
-debug_map :: proc(a_map: Map) {
-    for level in a_map.levels {
-        log.debugf("Level: '{}' ({})", level.identifier, level.path)
-    }
-}
-
-parse_level :: proc(path: string, alloc := context.temp_allocator) -> LevelInstance {
+load_level :: proc(level_name: string, alloc := context.temp_allocator) -> LevelInstance {
     l: LevelInstance
-    jdata, ok := os.read_entire_file(path, alloc)
-    if !ok {
-        fmt.print("Failed to read file: ", path, "\n")
-        return l
+    l_raw: LevelInstance_raw
+    level_exists: bool = true
+
+    level_file_path := fmt.tprintf("assets/levels/{}.{}", level_name, "json")
+    if !os.exists(level_file_path) {
+        log.infof("We have not yet generated a map")
+        level_exists = false
+        level_file_path = fmt.tprintf("assets/levels/{}.{}", level_name, "ldtk")
     }
 
-    err := json.unmarshal(jdata, &l, allocator = alloc)
+    jdata, ok := os.read_entire_file(level_file_path, alloc)
+
+    if !ok {
+        log.fatalf("Failed to read file: ", level_file_path)
+        os.exit(-1)
+    }
+
+    err := json.unmarshal(jdata, &l_raw, allocator = alloc)
     if err != nil {
-        fmt.print("Failed to unmarshal JSON: ", err, "\n")
-        return l
+        log.fatalf("Failed to unmarshal JSON: ", err)
+        os.exit(-1)
     }
     return l
 }
 
-debug_level :: proc(a_level: LevelInstance) {
-    log.debugf("Level: '{}'", a_level.identifier)
-    for layer_instance in a_level.layer_instances {
-        log.debugf("Layer: '{}' of type '{}'", layer_instance.identifier, layer_instance.type)
-        if layer_instance.type == .IntGrid {
-            //log.debugf("Int Grid: {}", layer_instance)
-        }
-        for entity_instance in layer_instance.entity_instances {
-            #partial switch entity_instance.identifier {
-            case .PlayerStart:
-                log.debugf("PlayerStart at [{},{}]", entity_instance.grid.([]i32)[0], entity_instance.grid.([]i32)[1])
-            case .LevelEnd:
-                log.debugf("LevelEnd at [{},{}]", entity_instance.grid.([]i32)[0], entity_instance.grid.([]i32)[1])
-            case .Static:
-                log.debugf("Static at [{},{}]", entity_instance.grid.([]i32)[0], entity_instance.grid.([]i32)[1])
-            case .Pickup:
-                log.debugf("Pickup at [{},{}]", entity_instance.grid.([]i32)[0], entity_instance.grid.([]i32)[1])
-            case .Key:
-                log.debugf("Key at [{},{}]", entity_instance.grid.([]i32)[0], entity_instance.grid.([]i32)[1])
-            case .Enemy:
-                log.debugf("Enemy at [{},{}]", entity_instance.grid.([]i32)[0], entity_instance.grid.([]i32)[1])
-            }
-            for field_instance in entity_instance.field_instances {
-                log.debugf(
-                    "Field value: {} of type: '{}' in group: {}",
-                    field_instance.value,
-                    fmt.tprintf("{}", field_instance.type),
-                    field_instance.group,
-                )
-            }
-        }
-    }
-}
-
 // Structures
 
-// Map
 
+// Map
 Map :: struct {
-    levels: []Level `json:"levels"`,
+    levels: []Level,
 }
 
 Level :: struct {
+    name: string,
+    path: string,
+}
+
+Map_raw :: struct {
+    levels: []Level_raw `json:"levels"`,
+}
+
+Level_raw :: struct {
     identifier: string `json:"identifier"`,
     path:       string `json:"externalRelPath"`,
 }
 
+
 // Level Instance
-
 LevelInstance :: struct {
-    identifier:      string `json:"identifier"`,
-    layer_instances: []LayerInstance `json:"layerInstances"`,
-}
-
-LevelInstance_fixed :: struct {
-    identifier:      string,
-    layer_instances: []LayerInstance_fixed,
+    name:            string,
+    layer_instances: []LayerInstance,
 }
 
 LayerInstanceType :: enum {
@@ -113,20 +143,6 @@ LayerInstanceIdentifier :: enum {
     Ceiling,
     Floor,
     Entities,
-}
-
-LayerInstance :: struct {
-    identifier:       LayerInstanceIdentifier `json:"__identifier"`,
-    type:             LayerInstanceType `json:"__type"`,
-    entity_instances: []EntityInstance `json:"entityInstances"`,
-    int_grid:         []i32 `json:"intGridCsv"`,
-}
-
-LayerInstance_fixed :: struct {
-    identifier:       LayerInstanceIdentifier,
-    type:             LayerInstanceType,
-    entity_instances: []EntityInstance_fixed,
-    int_grid:         []i32,
 }
 
 EntityInstanceGroup :: enum {
@@ -144,33 +160,52 @@ ArrayOrString :: union {
     string,
 }
 
-EntityInstance :: struct {
-    identifier:      EntityInstanceGroup `json:"__identifier"`,
-    grid:            ArrayOrString `json:"__grid"`,
-    field_instances: []FieldInstance `json:"fieldInstances"`,
-}
-
-EntityInstance_fixed :: struct {
-    identifier:      EntityInstanceGroup,
-    position:        linalg.Vector2f32,
-    field_instances: []FieldInstance_fixed,
-}
-
 FieldInstanceGroup :: enum {
     type,
     ViewerAngle,
     next_level,
 }
 
-FieldInstance :: struct {
-    group: FieldInstanceGroup `json:"__identifier"`,
-    type:  string `json:"__type"`,
-    value: json.Value `json:"__value"`,
+LayerInstance :: struct {
+    name:     LayerInstanceIdentifier,
+    type:     LayerInstanceType,
+    entities: []EntityInstance,
+    grid:     []i32,
 }
 
-FieldInstance_fixed :: struct {
+EntityInstance :: struct {
+    type:            EntityInstanceGroup,
+    position:        linalg.Vector2f32,
+    field_instances: []FieldInstance,
+}
+
+FieldInstance :: struct {
     group:    FieldInstanceGroup,
     type:     EntityInstanceGroup,
     instance: string,
     value:    f32,
+}
+
+LevelInstance_raw :: struct {
+    identifier:      string `json:"identifier"`,
+    layer_instances: []LayerInstance_raw `json:"layerInstances"`,
+}
+
+LayerInstance_raw :: struct {
+    identifier:       LayerInstanceIdentifier `json:"__identifier"`,
+    type:             LayerInstanceType `json:"__type"`,
+    entity_instances: []EntityInstance `json:"entityInstances"`,
+    int_grid:         []i32 `json:"intGridCsv"`,
+}
+
+EntityInstance_raw :: struct {
+    identifier:      EntityInstanceGroup `json:"__identifier"`,
+    grid:            ArrayOrString `json:"__grid"`,
+    field_instances: []FieldInstance_raw `json:"fieldInstances"`,
+}
+
+FieldInstance_raw :: struct {
+    group: FieldInstanceGroup `json:"__identifier"`,
+    type:  string `json:"__type"`,
+    value: json.Value `json:"__value"`,
 }

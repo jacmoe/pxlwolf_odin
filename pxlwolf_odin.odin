@@ -1,11 +1,17 @@
 package pxlwolf_odin
-import "core:log"
-import "core:strings"
-import "core:mem"
 import "core:fmt"
+import "core:log"
+import "core:mem"
 
 _ :: mem
 _ :: fmt
+
+// globals
+level_map: map[string]string
+
+the_map :: Map
+config :: Config
+
 
 main :: proc() {
 
@@ -33,7 +39,12 @@ main :: proc() {
 
     /// set up logging
 
-    log_level: log.Level = .Debug
+    log_level: log.Level
+    if ODIN_DEBUG {
+       log_level = .Debug
+    } else {
+       log_level = .Info
+    }
 
     file_logger := create_file_logger(log_level)
     defer log.destroy_file_logger(file_logger)
@@ -45,9 +56,18 @@ main :: proc() {
     defer log.destroy_multi_logger(multi_logger)
     context.logger = multi_logger
 
-    log.info("------------------------")
-    log.info("Welcome to PxlWolf")
-    log.info("------------------------")
+    print_welcom()
+
+
+    /// load and parse the map
+
+    the_map := load_map("pxlwolf")
+    debug_print_map(the_map)
+
+    for level in the_map.levels {
+        level_map[level.name] = level.path
+    }
+    defer delete(level_map)
 
 
     /// load config
@@ -56,18 +76,12 @@ main :: proc() {
 
     print_config(config)
 
-    /// load and parse the map
 
-    the_map: Map = parse_map("assets/levels/pxlwolf.ldtk")
-    // debug_map(the_map)
-
-    level_path := strings.concatenate({"assets/levels/", the_map.levels[0].path})
-    defer delete(level_path)
-    // the_level: LevelInstance = parse_level(level_path)
-    // debug_level(the_level)
-
+    // load the level
+    the_level: LevelInstance = load_level(config.game.level)
+    debug_print_level(the_level)
 
     /// PxlWolf exit
 
-    log.info("PxlWolf shutdown")
+    print_goodby()
 }

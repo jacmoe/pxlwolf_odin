@@ -1,6 +1,6 @@
 # pxlwolf_odin
 
 
-# local vendors
+## Dependencies
 
 rres = https://github.com/CodeOnARaft/odin-rres
