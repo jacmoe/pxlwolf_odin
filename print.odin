@@ -1,6 +1,5 @@
 package pxlwolf_odin
 
-import "core:fmt"
 import "core:log"
 
 
@@ -44,36 +43,3 @@ debug_print_map :: proc(a_map: Map) {
     }
 }
 
-debug_print_level :: proc(a_level: LevelInstance) {
-    log.debugf("Level: '{}'", a_level.name)
-    for layer_instance in a_level.layer_instances {
-        log.debugf("Layer: '{}' of type '{}'", layer_instance.name, layer_instance.type)
-        if layer_instance.type == .IntGrid {
-            //log.debugf("Int Grid: {}", layer_instance)
-        }
-        for entity_instance in layer_instance.entities {
-            #partial switch entity_instance.type {
-            case .PlayerStart:
-                log.debugf("PlayerStart at [{},{}]", entity_instance.position.x, entity_instance.position.y)
-            case .LevelEnd:
-                log.debugf("LevelEnd at [{},{}]", entity_instance.position.x, entity_instance.position.y)
-            case .Static:
-                log.debugf("Static at [{},{}]", entity_instance.position.x, entity_instance.position.y)
-            case .Pickup:
-                log.debugf("Pickup at [{},{}]", entity_instance.position.x, entity_instance.position.y)
-            case .Key:
-                log.debugf("Key at [{},{}]", entity_instance.position.x, entity_instance.position.y)
-            case .Enemy:
-                log.debugf("Enemy at [{},{}]", entity_instance.position.x, entity_instance.position.y)
-            }
-            for field_instance in entity_instance.field_instances {
-                log.debugf(
-                    "Field value: {} of type: '{}' in group: {}",
-                    field_instance.value,
-                    fmt.tprintf("{}", field_instance.type),
-                    field_instance.group,
-                )
-            }
-        }
-    }
-}

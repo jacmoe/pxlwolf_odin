@@ -62,7 +62,7 @@ main :: proc() {
     /// load and parse the map
 
     the_map := load_map("pxlwolf")
-    debug_print_map(the_map)
+    // debug_print_map(the_map)
 
     for level in the_map.levels {
         level_map[level.name] = level.path
@@ -79,7 +79,8 @@ main :: proc() {
 
     // load the level
     the_level: LevelInstance = load_level(config.game.level)
-    debug_print_level(the_level)
+    _ = the_level
+    // debug_print_level(the_level)
 
     /// PxlWolf exit
 
