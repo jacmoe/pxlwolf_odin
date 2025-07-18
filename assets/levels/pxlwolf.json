@@ -1,0 +1,32 @@
+{
+	"levels": [
+		{
+			"name": "Level1",
+			"path": "pxlwolf/0000-Level1.ldtkl"
+		},
+		{
+			"name": "Level2",
+			"path": "pxlwolf/0001-Level2.ldtkl"
+		},
+		{
+			"name": "Level3",
+			"path": "pxlwolf/0002-Level3.ldtkl"
+		},
+		{
+			"name": "Level4",
+			"path": "pxlwolf/0003-Level4.ldtkl"
+		},
+		{
+			"name": "Level5",
+			"path": "pxlwolf/0004-Level5.ldtkl"
+		},
+		{
+			"name": "Level6",
+			"path": "pxlwolf/0005-Level6.ldtkl"
+		},
+		{
+			"name": "Level7",
+			"path": "pxlwolf/0006-Level7.ldtkl"
+		}
+	]
+}
