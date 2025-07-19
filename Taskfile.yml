@@ -3,27 +3,27 @@
 version: '3'
 
 vars:
-  STDARGS: -vet -strict-style -show-timings
+  STDARGS: -vet -strict-style -show-timings -out:pxlwolf_odin
 
 interval: 500ms
 
 tasks:
   default:
     cmds:
-      - odin run . -o:minimal {{.STDARGS}}
+      - odin run src/. -o:minimal {{.STDARGS}}
     aliases: [run]
     
   build:
     cmds:
-      - odin build . -o:minimal {{.STDARGS}}
+      - odin build src/. -o:minimal {{.STDARGS}}
   
   debug:
     cmds:
-      - odin run . -debug -o:none -use-separate-modules {{.STDARGS}}
+      - odin run src/. -debug -o:none -use-separate-modules {{.STDARGS}}
 
   debug_build:
     cmds:
-      - odin build . -debug -o:none -use-separate-modules
+      - odin build src/. -debug -o:none -use-separate-modules
 
   leaks:
     deps: [debug_build]
@@ -33,7 +33,7 @@ tasks:
   test:
     watch: true
     sources:
-      - '**/*.odin'
+      - 'src/**/*.odin'
     cmds:
-      - odin test .
+      - odin test src/.
     silent: true
