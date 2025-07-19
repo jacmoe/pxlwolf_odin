@@ -11,12 +11,8 @@
 						33.00000000,
 						55.00000000
 					],
-					"field_instances": [
-						{
-							"str": "",
-							"flt": 0.00000000
-						}
-					]
+					"name": "",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "LevelEnd",
@@ -24,12 +20,8 @@
 						28.00000000,
 						46.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Level2",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Level2",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "LevelEnd",
@@ -37,12 +29,8 @@
 						14.00000000,
 						50.00000000
 					],
-					"field_instances": [
-						{
-							"str": "",
-							"flt": 0.00000000
-						}
-					]
+					"name": "",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -50,12 +38,8 @@
 						35.00000000,
 						55.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Body",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Body",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -63,12 +47,8 @@
 						45.00000000,
 						35.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Planter",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Planter",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -76,12 +56,8 @@
 						45.00000000,
 						29.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Planter",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Planter",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -89,12 +65,8 @@
 						31.00000000,
 						29.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Planter",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Planter",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -102,12 +74,8 @@
 						31.00000000,
 						35.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Planter",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Planter",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -115,12 +83,8 @@
 						40.00000000,
 						28.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Planter",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Planter",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -128,12 +92,8 @@
 						36.00000000,
 						28.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Planter",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Planter",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -141,12 +101,8 @@
 						34.00000000,
 						8.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Table",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Table",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -154,12 +110,8 @@
 						42.00000000,
 						8.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Table",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Table",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -167,12 +119,8 @@
 						38.00000000,
 						8.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Table",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Table",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -180,12 +128,8 @@
 						14.00000000,
 						16.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Table",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Table",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Pickup",
@@ -193,12 +137,8 @@
 						38.00000000,
 						60.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Meal",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Meal",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Pickup",
@@ -206,12 +146,8 @@
 						44.00000000,
 						59.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ammo",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ammo",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -219,12 +155,8 @@
 						32.00000000,
 						49.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Bones",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Bones",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Pickup",
@@ -232,12 +164,8 @@
 						33.00000000,
 						49.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Meal",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Meal",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -245,12 +173,8 @@
 						42.00000000,
 						50.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Skel_Remain",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Skel_Remain",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Pickup",
@@ -258,12 +182,8 @@
 						41.00000000,
 						55.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Meal",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Meal",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -271,12 +191,8 @@
 						44.00000000,
 						55.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Bones",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Bones",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Pickup",
@@ -284,12 +200,8 @@
 						62.00000000,
 						41.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Dogfood",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Dogfood",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -297,12 +209,8 @@
 						62.00000000,
 						44.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Bowl",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Bowl",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Pickup",
@@ -310,12 +218,8 @@
 						58.00000000,
 						28.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Meal",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Meal",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -323,12 +227,8 @@
 						62.00000000,
 						28.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Wooden_Barrel",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Wooden_Barrel",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -336,12 +236,8 @@
 						61.00000000,
 						28.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Wooden_Barrel",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Wooden_Barrel",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -349,12 +245,8 @@
 						62.00000000,
 						29.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Wooden_Barrel",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Wooden_Barrel",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -362,12 +254,8 @@
 						59.00000000,
 						37.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Well_Water",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Well_Water",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -375,12 +263,8 @@
 						61.00000000,
 						37.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Well_Dry",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Well_Dry",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -388,12 +272,8 @@
 						59.00000000,
 						34.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Table_Small",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Table_Small",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -401,12 +281,8 @@
 						61.00000000,
 						34.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Table_Small",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Table_Small",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -414,12 +290,8 @@
 						60.00000000,
 						28.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Cloth",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Cloth",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Pickup",
@@ -427,12 +299,8 @@
 						60.00000000,
 						34.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Meal",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Meal",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Pickup",
@@ -440,12 +308,8 @@
 						62.00000000,
 						36.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Meal",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Meal",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Pickup",
@@ -453,12 +317,8 @@
 						33.00000000,
 						24.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Health",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Health",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Pickup",
@@ -466,12 +326,8 @@
 						33.00000000,
 						23.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Health",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Health",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Pickup",
@@ -479,12 +335,8 @@
 						32.00000000,
 						24.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Machinegun",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Machinegun",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Pickup",
@@ -492,12 +344,8 @@
 						32.00000000,
 						23.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ammo",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ammo",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Pickup",
@@ -505,12 +353,8 @@
 						32.00000000,
 						21.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ammo",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ammo",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -518,12 +362,8 @@
 						43.00000000,
 						7.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Urn",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Urn",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -531,12 +371,8 @@
 						33.00000000,
 						7.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Urn",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Urn",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -544,12 +380,8 @@
 						10.00000000,
 						13.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Lamp",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Lamp",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -557,12 +389,8 @@
 						10.00000000,
 						18.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Lamp",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Lamp",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -570,12 +398,8 @@
 						10.00000000,
 						15.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Flag",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Flag",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -583,12 +407,8 @@
 						15.00000000,
 						13.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Tree",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Tree",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -596,12 +416,8 @@
 						13.00000000,
 						13.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Tree",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Tree",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -609,12 +425,8 @@
 						18.00000000,
 						18.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Lamp",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Lamp",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -622,12 +434,8 @@
 						18.00000000,
 						14.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Lamp",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Lamp",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -635,12 +443,8 @@
 						17.00000000,
 						29.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Urn",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Urn",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -648,12 +452,8 @@
 						17.00000000,
 						35.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Urn",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Urn",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -661,12 +461,8 @@
 						11.00000000,
 						35.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Urn",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Urn",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -674,12 +470,8 @@
 						11.00000000,
 						29.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Urn",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Urn",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Pickup",
@@ -687,12 +479,8 @@
 						11.00000000,
 						24.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Meal",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Meal",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Pickup",
@@ -700,12 +488,8 @@
 						6.00000000,
 						19.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Health",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Health",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -713,12 +497,8 @@
 						7.00000000,
 						19.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Wooden_Barrel",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Wooden_Barrel",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -726,12 +506,8 @@
 						11.00000000,
 						40.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Green_Barrel",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Green_Barrel",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Pickup",
@@ -739,12 +515,8 @@
 						9.00000000,
 						42.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Meal",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Meal",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -752,12 +524,8 @@
 						18.00000000,
 						46.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -765,12 +533,8 @@
 						10.00000000,
 						46.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -778,12 +542,8 @@
 						14.00000000,
 						41.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -791,12 +551,8 @@
 						6.00000000,
 						43.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -804,12 +560,8 @@
 						6.00000000,
 						37.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -817,12 +569,8 @@
 						6.00000000,
 						28.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -830,12 +578,8 @@
 						6.00000000,
 						24.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -843,12 +587,8 @@
 						10.00000000,
 						25.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -856,12 +596,8 @@
 						6.00000000,
 						20.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -869,12 +605,8 @@
 						10.00000000,
 						41.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -882,12 +614,8 @@
 						12.00000000,
 						30.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -895,12 +623,8 @@
 						16.00000000,
 						30.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -908,12 +632,8 @@
 						16.00000000,
 						34.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -921,12 +641,8 @@
 						12.00000000,
 						34.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -934,12 +650,8 @@
 						14.00000000,
 						25.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -947,12 +659,8 @@
 						14.00000000,
 						22.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -960,12 +668,8 @@
 						23.00000000,
 						16.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -973,12 +677,8 @@
 						23.00000000,
 						10.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -986,12 +686,8 @@
 						28.00000000,
 						10.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -999,12 +695,8 @@
 						38.00000000,
 						10.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Gold",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Gold",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -1012,12 +704,8 @@
 						38.00000000,
 						17.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -1025,12 +713,8 @@
 						38.00000000,
 						21.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -1038,12 +722,8 @@
 						38.00000000,
 						25.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -1051,12 +731,8 @@
 						38.00000000,
 						32.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Gold",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Gold",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -1064,12 +740,8 @@
 						33.00000000,
 						32.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Gold",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Gold",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -1077,12 +749,8 @@
 						44.00000000,
 						32.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Gold",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Gold",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -1090,12 +758,8 @@
 						38.00000000,
 						39.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -1103,12 +767,8 @@
 						38.00000000,
 						46.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -1116,12 +776,8 @@
 						38.00000000,
 						42.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -1129,12 +785,8 @@
 						38.00000000,
 						50.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -1142,12 +794,8 @@
 						38.00000000,
 						55.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -1155,12 +803,8 @@
 						38.00000000,
 						59.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -1168,12 +812,8 @@
 						34.00000000,
 						59.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Static",
@@ -1181,12 +821,8 @@
 						42.00000000,
 						59.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Ceil_Green",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Ceil_Green",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Enemy",
@@ -1194,16 +830,8 @@
 						32.00000000,
 						30.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Guard",
-							"flt": 0.00000000
-						},
-						{
-							"str": "",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Guard",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Enemy",
@@ -1211,16 +839,8 @@
 						53.00000000,
 						43.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Guard",
-							"flt": 0.00000000
-						},
-						{
-							"str": "",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Guard",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Enemy",
@@ -1228,16 +848,8 @@
 						60.00000000,
 						43.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Dog",
-							"flt": 0.00000000
-						},
-						{
-							"str": "",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Dog",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Enemy",
@@ -1245,16 +857,8 @@
 						34.00000000,
 						21.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Guard",
-							"flt": 0.00000000
-						},
-						{
-							"str": "",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Guard",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Enemy",
@@ -1262,16 +866,8 @@
 						36.00000000,
 						8.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Guard",
-							"flt": 0.00000000
-						},
-						{
-							"str": "",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Guard",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Enemy",
@@ -1279,16 +875,8 @@
 						25.00000000,
 						16.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Guard",
-							"flt": 0.00000000
-						},
-						{
-							"str": "",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Guard",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Enemy",
@@ -1296,16 +884,8 @@
 						11.00000000,
 						16.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Guard",
-							"flt": 0.00000000
-						},
-						{
-							"str": "",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Guard",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Enemy",
@@ -1313,16 +893,8 @@
 						11.00000000,
 						25.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Guard",
-							"flt": 0.00000000
-						},
-						{
-							"str": "",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Guard",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Enemy",
@@ -1330,16 +902,8 @@
 						26.00000000,
 						46.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Guard",
-							"flt": 0.00000000
-						},
-						{
-							"str": "",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Guard",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Enemy",
@@ -1347,16 +911,8 @@
 						11.00000000,
 						41.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Guard",
-							"flt": 0.00000000
-						},
-						{
-							"str": "",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Guard",
+					"orientation": 0.00000000
 				},
 				{
 					"type": "Enemy",
@@ -1364,16 +920,8 @@
 						60.00000000,
 						30.00000000
 					],
-					"field_instances": [
-						{
-							"str": "Guard",
-							"flt": 0.00000000
-						},
-						{
-							"str": "",
-							"flt": 0.00000000
-						}
-					]
+					"name": "Guard",
+					"orientation": 0.00000000
 				}
 			],
 			"grid": [

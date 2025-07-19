@@ -41,9 +41,9 @@ main :: proc() {
 
     log_level: log.Level
     if ODIN_DEBUG {
-       log_level = .Debug
+        log_level = .Debug
     } else {
-       log_level = .Info
+        log_level = .Info
     }
 
     file_logger := create_file_logger(log_level)

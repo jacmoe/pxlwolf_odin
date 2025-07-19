@@ -112,7 +112,6 @@ load_level :: proc(level_name: string, alloc := context.temp_allocator) -> Level
         }
 
         // create a LevelInstance
-
         l.name = l_raw.identifier
         l.layer_instances = make([]LayerInstance, len(l_raw.layer_instances), alloc)
         for layer_instance, i in l_raw.layer_instances {
@@ -125,24 +124,14 @@ load_level :: proc(level_name: string, alloc := context.temp_allocator) -> Level
                 the_x := cast(f32)entity_instance.grid.([]i32)[0]
                 the_y := cast(f32)entity_instance.grid.([]i32)[1]
                 l.layer_instances[i].entities[j].position = linalg.Vector2f32{the_x, the_y}
-                l.layer_instances[i].entities[j].field_instances = make(
-                    []FieldInstance,
-                    len(entity_instance.field_instances),
-                    alloc,
-                )
-                for field_instance, k in entity_instance.field_instances {
+                for field_instance in entity_instance.field_instances {
                     if field_instance.type == "String" {
-                        l.layer_instances[i].entities[j].field_instances[k].str = get_string_from_json_value(
-                            field_instance.value,
-                        )
+                        l.layer_instances[i].entities[j].name = get_string_from_json_value(field_instance.value)
                     } else if field_instance.type == "Float" {
-                        l.layer_instances[i].entities[j].field_instances[k].flt = get_float_from_json_value(
-                            field_instance.value,
-                        )
+                        l.layer_instances[i].entities[j].orientation = get_float_from_json_value(field_instance.value)
                     } else {
                         str_to_convert := field_instance.value.(json.Array)[0]
-                        l.layer_instances[i].entities[j].field_instances[k].str =
-                            get_string_from_json_value_array(str_to_convert)
+                        l.layer_instances[i].entities[j].name = get_string_from_json_value_array(str_to_convert)
                     }
                 }
             }
@@ -151,15 +140,15 @@ load_level :: proc(level_name: string, alloc := context.temp_allocator) -> Level
 
         // marshall the Map
         marshall_json_data, marshall_err := json.marshal(
-                l,
-                {
-                    // Adds indentation etc
-                    pretty         = true,
+        l,
+        {
+            // Adds indentation etc
+            pretty         = true,
 
-                    // Output enum member names instead of numeric value.
-                    use_enum_names = true,
-                },
-            )
+            // Output enum member names instead of numeric value.
+            use_enum_names = true,
+        },
+        )
 
         if marshall_err != nil {
             fmt.eprintfln("Unable to marshal JSON: %v", marshall_err)
@@ -281,14 +270,10 @@ LayerInstance :: struct {
 }
 
 EntityInstance :: struct {
-    type:            EntityInstanceGroup,
-    position:        linalg.Vector2f32,
-    field_instances: []FieldInstance,
-}
-
-FieldInstance :: struct {
-    str: string,
-    flt:    f32,
+    type:        EntityInstanceGroup,
+    position:    linalg.Vector2f32,
+    name:        string,
+    orientation: f32,
 }
 
 LevelInstance_raw :: struct {

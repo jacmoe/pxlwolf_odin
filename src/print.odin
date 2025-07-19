@@ -42,4 +42,3 @@ debug_print_map :: proc(a_map: Map) {
         log.debugf("Level: '{}' ({})", level.name, level.path)
     }
 }
-
